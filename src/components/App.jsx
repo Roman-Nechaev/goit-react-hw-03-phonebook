@@ -7,7 +7,6 @@ import ContactsList from './ContactsList/ContactsList';
 import Filter from './Filter/Filter';
 
 import { Container, Title, TitleContacts } from './App.styled';
-import { NoContacts } from './ContactsList/NoContacts';
 
 const LOCALSTORAGE_KEY = 'contacts';
 
@@ -94,15 +93,11 @@ class App extends Component {
         <TitleContacts>Contacts</TitleContacts>
         <Filter value={filter} onChange={this.changeFilter} />
 
-        {!contacts.length ? (
-          <NoContacts />
-        ) : (
-          <ContactsList
-            quantity={quantity}
-            contacts={visibleContacts}
-            onDeleteContact={this.deleteContact}
-          />
-        )}
+        <ContactsList
+          quantity={quantity}
+          contacts={visibleContacts}
+          onDeleteContact={this.deleteContact}
+        />
       </Container>
     );
   }

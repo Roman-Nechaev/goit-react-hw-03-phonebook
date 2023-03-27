@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { NoContacts } from './NoContacts';
 
 import {
   Container,
@@ -13,21 +14,27 @@ import {
 
 const ContactsList = ({ quantity, contacts, onDeleteContact }) => (
   <>
-    <Info>Quantity yours contacts: {quantity}</Info>
-    <Container>
-      {contacts.map(({ id, name, number }) => (
-        <Item key={id}>
-          <Text>
-            <PersonOutline size={22} />
-            {name}: <CallOutline size={22} />
-            {number}
-          </Text>
-          <Btn type="button" onClick={() => onDeleteContact(id)}>
-            <IoTrashOut size={20} />
-          </Btn>
-        </Item>
-      ))}
-    </Container>
+    {!quantity ? (
+      <NoContacts />
+    ) : (
+      <>
+        <Info>Quantity yours contacts: {quantity}</Info>
+        <Container>
+          {contacts.map(({ id, name, number }) => (
+            <Item key={id}>
+              <Text>
+                <PersonOutline size={22} />
+                {name}: <CallOutline size={22} />
+                {number}
+              </Text>
+              <Btn type="button" onClick={() => onDeleteContact(id)}>
+                <IoTrashOut size={20} />
+              </Btn>
+            </Item>
+          ))}
+        </Container>
+      </>
+    )}
   </>
 );
 
