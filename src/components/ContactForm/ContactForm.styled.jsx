@@ -1,4 +1,6 @@
 import { Form, Field } from 'formik';
+import { IoPersonAddOutline } from 'react-icons/io5';
+
 import styled from 'styled-components';
 
 export const Forms = styled(Form)`
@@ -46,12 +48,13 @@ export const Button = styled.button`
   outline: none;
 
   margin-left: auto;
-  border-radius: 15px;
+  border-radius: 30px;
   padding: 5px 20px;
   background-color: #3fb56e;
+  display: flex;
 
   color: white;
-  font-weight: 500;
+
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
   &:hover,
@@ -60,3 +63,5 @@ export const Button = styled.button`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   }
 `;
+
+export const IoPerson = styled(IoPersonAddOutline)``;

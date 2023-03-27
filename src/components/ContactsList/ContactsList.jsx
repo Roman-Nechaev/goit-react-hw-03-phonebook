@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import {
   Container,
   Item,
@@ -6,6 +7,7 @@ import {
   Btn,
   PersonOutline,
   CallOutline,
+  IoTrashOut,
 } from './ContactsList.stylid';
 
 const ContactsList = ({ contacts, onDeleteContact }) => (
@@ -18,7 +20,8 @@ const ContactsList = ({ contacts, onDeleteContact }) => (
           {number}
         </Text>
         <Btn type="button" onClick={() => onDeleteContact(id)}>
-          Delete
+          {' '}
+          <IoTrashOut size={20} />
         </Btn>
       </Item>
     ))}

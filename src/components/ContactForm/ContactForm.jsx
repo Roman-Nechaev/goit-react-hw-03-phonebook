@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
-import { Input, Forms, Button } from './ContactForm.styled';
+
+import { Input, Forms, Button, IoPerson } from './ContactForm.styled';
 
 const initialValues = {
   name: '',
@@ -39,7 +40,9 @@ const ContactForm = ({ onSubmit }) => {
           />
         </label>
 
-        <Button type="submit">Add contact</Button>
+        <Button type="submit">
+          <IoPerson size={22} />
+        </Button>
       </Forms>
     </Formik>
   );

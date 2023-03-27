@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { IoPersonOutline, IoCallOutline } from 'react-icons/io5';
+import { IoPersonOutline, IoCallOutline, IoTrashSharp } from 'react-icons/io5';
 
 export const Container = styled.ul`
   display: grid;
@@ -45,18 +45,23 @@ export const CallOutline = styled(IoCallOutline)`
   padding-left: 10px;
 `;
 
+export const IoTrashOut = styled(IoTrashSharp)`
+  /* padding: 2px; */
+`;
+
 export const Btn = styled.button`
   border: none;
-  font: inherit;
   cursor: pointer;
   outline: none;
-
+  display: flex;
+  padding: 12px;
   margin-left: auto;
-  border-radius: 15px;
-  padding: 10px 24px;
+
+  border-radius: 50%;
+
   background-color: #3f82b5;
   color: white;
-  font-weight: 500;
+
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
   &:hover,
