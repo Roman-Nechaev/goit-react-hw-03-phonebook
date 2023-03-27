@@ -22,20 +22,17 @@ class App extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.contacts !== prevState.contacts) {
-      console.log('Обновилось поле contacts');
-      localStorage.setItem(
-        LOCALSTORAGE_KEY,
-        JSON.stringify(this.state.contacts)
-      );
+    const { contacts } = this.state;
+    if (contacts !== prevState.contacts) {
+      localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(contacts));
     }
   }
 
   componentDidMount() {
-    const contact = localStorage.getItem(LOCALSTORAGE_KEY);
-    const parseContact = JSON.parse(contact);
-    if (parseContact) {
-      this.setState({ contacts: parseContact });
+    const contact = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+
+    if (contact) {
+      this.setState({ contacts: contact });
     }
   }
 
