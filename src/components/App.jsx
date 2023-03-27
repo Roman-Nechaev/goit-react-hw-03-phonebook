@@ -8,6 +8,8 @@ import Filter from './Filter/Filter';
 
 import { Container, Title, TitleContacts } from './App.styled';
 
+const LOCALSTORAGE_KEY = 'contacts';
+
 class App extends Component {
   state = {
     contacts: [
@@ -18,6 +20,24 @@ class App extends Component {
     ],
     filter: '',
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      console.log('Обновилось поле contacts');
+      localStorage.setItem(
+        LOCALSTORAGE_KEY,
+        JSON.stringify(this.state.contacts)
+      );
+    }
+  }
+
+  componentDidMount() {
+    const contact = localStorage.getItem(LOCALSTORAGE_KEY);
+    const parseContact = JSON.parse(contact);
+    if (parseContact) {
+      this.setState({ contacts: parseContact });
+    }
+  }
 
   addContact = ({ name, number }) => {
     const check = this.nameCheck(name);
