@@ -1,11 +1,24 @@
 import styled from 'styled-components';
 import { IoPersonOutline, IoCallOutline, IoTrashSharp } from 'react-icons/io5';
 
+export const Info = styled.p`
+  margin-top: 15px;
+  margin-right: 25px;
+  text-align: end;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  /* text-align: center; */
+`;
+
 export const Container = styled.ul`
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 18px;
+  margin-top: 30px;
 `;
 
 export const Item = styled.li`

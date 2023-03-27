@@ -41,7 +41,7 @@ const ContactForm = ({ onSubmit }) => {
         </label>
 
         <Button type="submit">
-          <IoPerson size={22} />
+          <IoPerson size={26} />
         </Button>
       </Forms>
     </Formik>
